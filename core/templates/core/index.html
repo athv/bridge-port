@@ -1,0 +1,125 @@
+<!-- Add animations if time permits, use animate.css -->
+<!DOCTYPE html>{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="702569677599-pul4b2qhqohjl4r6u7eofmroelcto7jv.apps.googleusercontent.com">
+    <link rel="shortcut icon" href="{%  static 'core/images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+    <title>classBuddy</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="static/core/css/fullcalendar.min.css">
+    <link rel="stylesheet" href="static/core/css/fullcalendar.print.css">
+    <link rel="stylesheet" href="{% static 'core/css/font-awesome.min.css'  %}">
+  </head>
+  <body>
+
+    <!-- All the UI stuff -->
+    <div class='fullpage'>
+        <div class='leftpane pane'>
+            <div class='card small heading' id='lheading'>
+                Navigation
+            </div>
+            <div class='navel' id='home'>
+                <i class="fa fa-home" aria-hidden="true"></i><br>
+				Home
+            </div>
+            <div class='navel' id='notes'>
+                <i class="fa fa-sticky-note" aria-hidden="true"></i><br>
+				Notes
+            </div>
+            <div class='navel' id='attendece'>
+                <i class="fa fa-child" aria-hidden="true"></i><br>
+				Attendence
+            </div>
+            <div class='navel' id='calender'>
+                <i class="fa fa-calendar" aria-hidden="true"></i><br>
+                Calender
+            </div>
+            <div class='navel' id='about'>
+                <i class="fa fa-info-circle" aria-hidden="true"></i><br>
+				About
+            </div>
+        </div>
+        <div class='midpane pane'>
+            <div id='mheading'>
+                <i class="fa fa-bars" aria-hidden="true" id="hamburger-menu-button"></i>
+                <img id="profile-image" src="" alt="profile">
+                <div id='profile-name'></div>
+                <i class="fa fa-asterisk" aria-hidden="true" id="upcoming-menu-button"></i>
+            </div>
+            <div id='mcontent'>
+            </div>
+        </div>
+        <div class='rightpane pane'>
+            <div class='card small heading' id='rheading'>
+                Upcoming
+            </div>
+            <div class='content' id='rcontent'>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-popup">
+        <div id="login-stuff">
+            <img id="dummy-profile-image" src="{%  static 'core/images/logo.png' %}">
+            <!-- <img id="dummy-profile-image" src="https://unsplash.it/200/300/?random"> -->
+            <div id="bridge-in-signin-popup">
+                ClassBuddy
+            </div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="popup-content" id="signout-popup">
+            <img id="popup-profile-image" src="" alt="profile">
+            <div id='popup-profile-name'></div>
+            <div id='popup-profile-email'></div>
+            <div id='popup-profile-signout-button'>SIGN OUT</div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content" id="event-popup">
+            <div style="text-align:center;font-size: 30px;padding-bottom: 20px;">Event</div>
+            <div class='event-pop-el'>
+                <span class='span red name'>date</span><span class='span white span-content'>04-28-2022</span>
+            </div>
+            <div class='event-pop-el'>
+                <span class='span violet name'>title</span><span class='span white span-content'>Title</span>
+            </div>
+            <div class='event-pop-el'>
+                <span class='span green name'>subject</span><span class='span white span-content'>Mathematics for CSE</span>
+            </div>
+            <div class='event-pop-el'>
+                <span class='span blue name'>submission</span><span class='span white span-content'>Sam Kodi</span>
+            </div>
+            <div class='event-pop-el'>
+                <span class='span yellow name'>description</span><br><br><span class='span white span-content'>Submit notes/assignmnets completed during session for mathematics for CSE</span>
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content" id="choose-class-popup">
+            <div id="popup-welcome-message"></div>
+            <div id="popup-welcome-message-sub">
+                Just becase this is your first time here, please select your class.
+            </div>
+            <div id="popup-class-list"></div>
+            <div id='popup-choose-class-button'>Choose a class to proceed</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="static/core/js/moment.min.js"></script>
+    <script src="static/core/js/fullcalendar.min.js"></script>
+    <script src="static/core/js/easypiechart.js"></script>
+    <script src="{% static 'core/js/index.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  </body>
+</html>
