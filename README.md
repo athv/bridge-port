@@ -43,3 +43,5 @@ Implemented backend, For UI can use the Django admin console.
 4.	Manage Teachers
 5.	Manage Students
 6.	Manage Events
+
+Demo Video link : https://drive.google.com/file/d/1JbDHlZ9gi1n3tg_Vi5_Pi0FzXkqDD5X2/view?usp=sharing
